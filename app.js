@@ -2,6 +2,8 @@ const express = require("express");
 
 const app = express();
 
+app.use(express.json());
+
 const port = 5000;
 
 const welcome = (req, res) => {
@@ -14,6 +16,8 @@ const movieHandlers = require("./movieHandlers");
 
 app.get("/api/movies", movieHandlers.getMovies);
 app.get("/api/movies/:id", movieHandlers.getMovieById);
+app.post("/api/movies", movieHandlers.postMovie)
+
 
 
 const userWelcome = (req, res) => {
@@ -26,6 +30,7 @@ const userHandlers = require("./userHandlers");
 
 app.get("/api/users", userHandlers.getUsers);
 app.get("/api/users/:id", userHandlers.getUserById);
+app.post("/api/users", userHandlers.postUser)
 
 
 app.listen(port, (err) => {
