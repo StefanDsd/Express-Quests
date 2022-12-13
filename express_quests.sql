@@ -11,6 +11,8 @@ CREATE TABLE movies (
 
 INSERT INTO
   movies (title, director, year, color, duration)
+
+  
 VALUES
   (
     'Citizen Kane',
